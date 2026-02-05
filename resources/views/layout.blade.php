@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>
+        @yield('titulo' , 'Meu Site!!')
+    </title>
 </head>
 <body>
 <header>
@@ -18,6 +20,8 @@
         @yield('conteudo')
     </main>
     <hr>
-    <footer>Rodape</footer>
+    <footer>
+        @includeWhen($mostraRodape ?? false, 'footer')
+    </footer>
 </body>
 </html>

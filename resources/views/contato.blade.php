@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('titulo', $titulo)
+
+
+
 @section('conteudo')
 <h1>Entre em contato!</h1>
 

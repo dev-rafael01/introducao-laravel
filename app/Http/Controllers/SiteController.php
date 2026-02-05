@@ -10,15 +10,28 @@ class SiteController
 {
     //
     public function home (){
-        return view('home');
+        $mostraRodape = true;
+        return view('home' , ['mostraRodape' => $mostraRodape]);
     }
 
     public function services(){
-        return view('services');
+        $titulo ='Meu Site - Serviços ' . date('d/m/y');
+          $services = [
+
+            ['name' => 'Estagiario |', 'description' => ' Auxiliar Programadores'],
+            ['name' => 'Programador Front-End |', 'description' => ' Criar interface pro usuario'],
+            ['name' => 'Programador Bank-end |', 'description' => ' Cuida da parte invisivel do site'],
+            ['name' => 'Gestor |', 'description' => ' Gerenciar servicos'],
+        ];
+
+        return view('services' , ['titulo' => $titulo, 'services' => $services]);
+
+      
     }
 
     public function contato(){
+        $titulo = 'Meu Site - Contato';
         $dataAtual = date('d/m/Y');
-        return view('contato', ['dataAtual' => $dataAtual]);
+        return view('contato', ['dataAtual' => $dataAtual, 'titulo' => $titulo]);
     }
 }
