@@ -11,7 +11,9 @@ class SiteController
     //
     public function home (){
         $mostraRodape = true;
-        return view('home' , ['mostraRodape' => $mostraRodape]);
+
+        $userType = 'editor';
+        return view('home' , ['mostraRodape' => $mostraRodape, 'userType' => $userType]);
     }
 
     public function services(){
